@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noonmangofarm.github.io/primeroute-logistics/sitemap.xml
