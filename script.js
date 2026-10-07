@@ -3,55 +3,62 @@
 const menuBtn = document.getElementById("menuBtn");
 const navbar = document.getElementById("navbar");
 
-menuBtn.addEventListener("click", function () {
-    navbar.classList.toggle("active");
-});
-
+if (menuBtn && navbar) {
+    menuBtn.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+    });
+}
 
 // ================= CLOSE MENU AFTER CLICK =================
 
 const navLinks = document.querySelectorAll(".navbar a");
 
-navLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-        navbar.classList.remove("active");
+if (navLinks.length > 0 && navbar) {
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navbar.classList.remove("active");
+        });
     });
-
-});
-
+}
 
 // ================= FOOTER YEAR =================
 
-document.getElementById("year").textContent = new Date().getFullYear();
-
+const yearEl = document.getElementById("year");
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
 
 // ================= CONTACT FORM =================
 
 const contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener("submit", function (event) {
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    event.preventDefault();
+        const getValue = (id) => {
+            const el = document.getElementById(id);
+            return el ? el.value.trim() : "";
+        };
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const cargoType = document.getElementById("cargoType").value;
-    const productDescription = document.getElementById("productDescription").value;
-    const packages = document.getElementById("packages").value;
-    const weight = document.getElementById("weight").value;
-    const dimensions = document.getElementById("dimensions").value;
-    const pickup = document.getElementById("pickup").value;
-    const destination = document.getElementById("destination").value;
-    const shippingMethod = document.getElementById("shippingMethod").value;
-    const cargoDate = document.getElementById("cargoDate").value;
-    const message = document.getElementById("message").value;
+        const name = getValue("name");
+        const email = getValue("email");
+        const phone = getValue("phone");
+        const cargoType = getValue("cargoType");
+        const productDescription = getValue("productDescription");
+        const packages = getValue("packages");
+        const weight = getValue("weight");
+        const dimensions = getValue("dimensions");
+        const pickup = getValue("pickup");
+        const destination = getValue("destination");
+        const shippingMethod = getValue("shippingMethod");
+        const cargoDate = getValue("cargoDate");
+        const message = getValue("message");
 
-    const whatsappNumber = "923191217648";
+        const whatsappNumber = "923191217648";
 
-    const inquiryMessage =
-        `*NEW CARGO INQUIRY - PRIME ROUTE LOGISTICS*
+        const inquiryMessage =
+            `*NEW CARGO INQUIRY - PRIME ROUTE LOGISTICS*
 
 *CUSTOMER INFORMATION*
 Name: ${name}
@@ -74,12 +81,9 @@ Cargo Ready Date: ${cargoDate}
 *ADDITIONAL MESSAGE*
 ${message || "No additional message"}`;
 
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(inquiryMessage);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(inquiryMessage)}`;
 
-    window.open(whatsappURL, "_blank");
-
-});
+        window.open(whatsappURL, "_blank");
+        contactForm.reset();
+    });
+}
