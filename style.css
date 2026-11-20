@@ -157,7 +157,7 @@ a {
         linear-gradient(90deg,
             rgba(10, 20, 40, 0.92),
             rgba(10, 20, 40, 0.55)),
-        url("container.png") center/cover no-repeat;
+        url("container.webp") center/cover no-repeat;
 }
 
 .hero-content {
