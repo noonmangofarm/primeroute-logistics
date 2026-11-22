@@ -55,7 +55,7 @@ if (contactForm) {
         const cargoDate = getValue("cargoDate");
         const message = getValue("message");
 
-        const whatsappNumber = "923191217648";
+        const whatsappNumber = "971507728742";
 
         const inquiryMessage =
             `*NEW CARGO INQUIRY - PRIME ROUTE LOGISTICS*
@@ -83,7 +83,13 @@ ${message || "No additional message"}`;
 
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(inquiryMessage)}`;
 
-        window.open(whatsappURL, "_blank");
-        contactForm.reset();
+        const whatsappWindow = window.open(whatsappURL, "_blank");
+
+        if (whatsappWindow) {
+            whatsappWindow.opener = null;
+            contactForm.reset();
+        } else {
+            alert("Your browser blocked the WhatsApp window. Please allow pop-ups and try again. Your information has not been cleared.");
+        }
     });
 }
