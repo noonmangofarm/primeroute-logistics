@@ -49,6 +49,10 @@
     }
     </script>
 
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print"
         onload="this.media='all'">
@@ -56,16 +60,17 @@
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     </noscript>
+    
+    <!-- Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
 
-    <!-- External CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="Fi1DYJSWktocCvh6xSRqA6NvIJo1KPmbHwgYxJcwoSQ" />
 </head>
 
 <body>
@@ -91,7 +96,7 @@
                     <i class="fa-solid fa-phone"></i>
                 </a>
 
-                <a href="https://wa.me/+971507728742" target="_blank" rel="noopener" class="whatsapp-icon"
+                <a href="https://wa.me/971507728742" target="_blank" rel="noopener" class="whatsapp-icon"
                     aria-label="WhatsApp Us">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
@@ -128,7 +133,7 @@
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
 
-                    <a href="https://wa.me/+971507728742" target="_blank" rel="noopener" class="btn btn-outline">
+                    <a href="https://wa.me/971507728742" target="_blank" rel="noopener" class="btn btn-outline">
                         WhatsApp Booking
                     </a>
                 </div>
@@ -432,7 +437,7 @@
                 <a href="tel:+971507728742" class="btn btn-light">
                     <i class="fa-solid fa-phone"></i> Call UAE Desk
                 </a>
-                <a href="https://wa.me/+971507728742" target="_blank" rel="noopener" class="btn btn-dark">
+                <a href="https://wa.me/971507728742" target="_blank" rel="noopener" class="btn btn-dark">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp Dispatch
                 </a>
             </div>
@@ -468,7 +473,7 @@
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/+971507728742" target="_blank" rel="noopener" class="contact-item">
+                <a href="https://wa.me/971507728742" target="_blank" rel="noopener" class="contact-item">
                     <div class="contact-icon whatsapp-bg">
                         <i class="fa-brands fa-whatsapp"></i>
                     </div>
@@ -506,61 +511,69 @@
             <div class="contact-form-box">
                 <h3>Request A Shipping Quote</h3>
 
-                <form id="contactForm">
-
-                    <div class="form-row">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                        <input type="email" id="email" placeholder="Your Email" required>
-                    </div>
-
-                    <div class="form-row">
-                        <input type="tel" id="phone" placeholder="Phone / WhatsApp Number" required>
-                        <label for="cargoType">Cargo Type</label>
-                        <select id="cargoType" required>
-                            <option value="">Select Cargo Type</option>
-                            <option value="General Cargo">General Cargo</option>
-                            <option value="Electronics">Electronics</option>
-                            <option value="Furniture">Furniture</option>
-                            <option value="Food Items">Food Items</option>
-                            <option value="Clothing & Textiles">Clothing & Textiles</option>
-                            <option value="Machinery">Machinery</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-
-                    <input type="text" id="productDescription" placeholder="Cargo Description" required>
-
-                    <div class="form-row">
-                        <input type="number" id="packages" placeholder="Number of Packages">
-                        <input type="number" id="weight" placeholder="Total Weight (KG)">
-                    </div>
-
-                    <input type="text" id="dimensions" placeholder="Dimensions (L × W × H) - Optional">
-
-                    <div class="form-row">
-                        <input type="text" id="pickup" placeholder="Pickup Location (e.g., Dubai)" required>
-                        <input type="text" id="destination" placeholder="Destination (e.g., Riyadh)" required>
-                    </div>
-
-                    <div class="form-row">
-                        <select id="shippingMethod" required>
-                            <option value="">Preferred Shipping Method</option>
-                            <option value="Air Freight">Air Freight</option>
-                            <option value="Sea Freight">Sea Freight</option>
-                            <option value="Road Transportation">Road Transportation</option>
-                            <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
-                        </select>
-                        <label for="cargoDate">Cargo Date</label>
-                        <input type="date" id="cargoDate" required>
-                    </div>
-
-                    <textarea id="message" rows="4" placeholder="Additional Notes or Specific Requirements"></textarea>
-
-                    <button type="submit" class="btn btn-primary form-btn">
-                        Submit Freight Request <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-
-                </form>
+            <form id="contactForm">
+            
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Your Name" aria-label="Your Name" required>
+            
+                    <input type="email" id="email" placeholder="Your Email" aria-label="Your Email" required>
+                </div>
+            
+                <div class="form-row">
+                    <input type="tel" id="phone" placeholder="Phone / WhatsApp Number" aria-label="Phone or WhatsApp Number"
+                        required>
+            
+                    <select id="cargoType" aria-label="Cargo Type" required>
+                        <option value="">Select Cargo Type</option>
+                        <option value="General Cargo">General Cargo</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Furniture">Furniture</option>
+                        <option value="Food Items">Food Items</option>
+                        <option value="Clothing & Textiles">Clothing & Textiles</option>
+                        <option value="Machinery">Machinery</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            
+                <input type="text" id="productDescription" placeholder="Cargo Description" aria-label="Cargo Description" required>
+            
+                <div class="form-row">
+                    <input type="number" id="packages" placeholder="Number of Packages" aria-label="Number of Packages">
+            
+                    <input type="number" id="weight" placeholder="Total Weight (KG)" aria-label="Total Weight in Kilograms">
+                </div>
+            
+                <input type="text" id="dimensions" placeholder="Dimensions (L × W × H) - Optional" aria-label="Cargo Dimensions">
+            
+                <div class="form-row">
+                    <input type="text" id="pickup" placeholder="Pickup Location (e.g., Dubai)" aria-label="Pickup Location"
+                        required>
+            
+                    <input type="text" id="destination" placeholder="Destination (e.g., Riyadh)" aria-label="Destination Location"
+                        required>
+                </div>
+            
+                <div class="form-row">
+                    <select id="shippingMethod" aria-label="Preferred Shipping Method" required>
+            
+                        <option value="">Preferred Shipping Method</option>
+                        <option value="Air Freight">Air Freight</option>
+                        <option value="Sea Freight">Sea Freight</option>
+                        <option value="Road Transportation">Road Transportation</option>
+                        <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
+                    </select>
+            
+                    <input type="date" id="cargoDate" aria-label="Cargo Date" required>
+                </div>
+            
+                <textarea id="message" rows="4" placeholder="Additional Notes or Specific Requirements"
+                    aria-label="Additional Notes or Specific Requirements"></textarea>
+            
+                <button type="submit" class="btn btn-primary form-btn">
+                    Submit Freight Request <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            
+            </form>
             </div>
 
         </div>
@@ -597,7 +610,7 @@
             <div class="footer-contact">
                 <h3>Contact Desk</h3>
                 <a href="tel:+971507728742"><i class="fa-solid fa-phone"></i> +971 50 772 8742</a>
-                <a href="https://wa.me/+971 50 772 8742" target="_blank" rel="noopener"><i
+                <a href="https://wa.me/971507728742" target="_blank" rel="noopener"><i
                         class="fa-brands fa-whatsapp"></i> WhatsApp Booking</a>
                 <a href="mailto:primerouteslogistics5@gmail.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
             </div>
@@ -611,7 +624,7 @@
 
 
     <!-- FLOATING ACTION BUTTONS -->
-    <a href="https://wa.me/+971507728742" target="_blank" rel="noopener" class="floating-whatsapp"
+    <a href="https://wa.me/971507728742" target="_blank" rel="noopener" class="floating-whatsapp"
         aria-label="WhatsApp Us">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
