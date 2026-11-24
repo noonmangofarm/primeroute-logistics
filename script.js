@@ -93,3 +93,23 @@ ${message || "No additional message"}`;
         }
     });
 }
+
+// ================= COUNTRY SELECTION =================
+
+const countryCards = document.querySelectorAll(
+    ".country-card[data-country]"
+);
+
+const destinationField = document.getElementById("destination");
+
+countryCards.forEach(function (card) {
+
+    card.addEventListener("click", function () {
+
+        if (destinationField) {
+            destinationField.value = this.dataset.country;
+        }
+
+    });
+
+});
