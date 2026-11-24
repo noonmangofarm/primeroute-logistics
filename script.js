@@ -53,6 +53,7 @@ if (contactForm) {
         const destination = getValue("destination");
         const shippingMethod = getValue("shippingMethod");
         const cargoDate = getValue("cargoDate");
+        const targetDeliveryDate = getValue("targetDeliveryDate");
         const message = getValue("message");
 
         const whatsappNumber = "971507728742";
@@ -76,7 +77,8 @@ Dimensions: ${dimensions || "Not Provided"}
 Pickup Location: ${pickup}
 Destination: ${destination}
 Shipping Method: ${shippingMethod}
-Cargo Ready Date: ${cargoDate}
+Cargo Ready Date: ${cargoDate || "Not Provided"}
+Target Delivery Date: ${targetDeliveryDate || "Not Provided"}
 
 *ADDITIONAL MESSAGE*
 ${message || "No additional message"}`;
@@ -108,6 +110,30 @@ countryCards.forEach(function (card) {
 
         if (destinationField) {
             destinationField.value = this.dataset.country;
+        }
+
+    });
+
+});
+
+// ================= AUTOMATIC SHIPPING METHOD SELECTION =================
+
+const serviceTriggers = document.querySelectorAll("[data-shipping]");
+
+serviceTriggers.forEach(function (trigger) {
+
+    trigger.addEventListener("click", function () {
+
+        const serviceField = document.getElementById("shippingMethod");
+        const selectedService = this.dataset.shipping;
+
+        if (!serviceField) return;
+
+        const matchingOption = Array.from(serviceField.options)
+            .find(option => option.value === selectedService);
+
+        if (matchingOption) {
+            serviceField.value = selectedService;
         }
 
     });
