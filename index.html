@@ -153,6 +153,11 @@
                     <h3>Air Freight</h3>
                     <p>Fast and reliable air cargo shipping services from Dubai for international time-sensitive
                         deliveries.</p>
+                        
+                        <a href="#contact" class="text-link" data-shipping="Air Freight">
+                            Request Air Freight Quote
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                 </div>
             </div>
 
@@ -305,7 +310,9 @@
                         <h3>Sea Freight Shipping</h3>
                         <p>Complete ocean freight services including Full Container Load (FCL) and Less than Container
                             Load (LCL) options worldwide.</p>
-                        <a href="#contact">Get Quote <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" data-shipping="Sea Freight">
+                        Get Quote <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                     </div>
                 </div>
 
@@ -321,7 +328,9 @@
                         <h3>Road Transportation</h3>
                         <p>Reliable overland trucking logistics connecting Dubai to Saudi Arabia, Oman, Qatar, Kuwait,
                             Bahrain, and Iraq.</p>
-                        <a href="#contact">Get Quote <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" data-shipping="Road Transportation">
+                            Get Quote <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -337,7 +346,9 @@
                         <h3>Warehousing & Storage</h3>
                         <p>Flexible short-term and long-term secure warehouse storage, packing, and consignment
                             management in Dubai.</p>
-                        <a href="#contact">Get Quote <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" data-shipping="Warehousing & Storage">
+                        Get Quote <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                     </div>
                 </div>
 
@@ -605,17 +616,42 @@
                 </div>
             
                 <div class="form-row">
-                    <select id="shippingMethod" aria-label="Preferred Shipping Method" required>
-            
-                        <option value="">Preferred Shipping Method</option>
-                        <option value="Air Freight">Air Freight</option>
-                        <option value="Sea Freight">Sea Freight</option>
-                        <option value="Road Transportation">Road Transportation</option>
-                        <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
-                    </select>
-            
-                    <input type="date" id="cargoDate" aria-label="Cargo Date" required>
+                
+                    <div class="form-field">
+                        <label for="shippingMethod">Preferred Service</label>
+                
+                        <select id="shippingMethod" required>
+                            <option value="">Select a Service</option>
+                            <option value="Air Freight">Air Freight</option>
+                            <option value="Sea Freight">Sea Freight</option>
+                            <option value="Road Transportation">Road Transportation</option>
+                            <option value="Warehousing & Storage">Warehousing & Storage</option>
+                            <option value="Not Sure - Need Advice">Not Sure - Need Advice</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-field">
+                        <label for="cargoDate">Cargo Ready Date (Pickup Date)</label>
+                
+                        <input type="date" id="cargoDate">
+                
+                        <small>When will your cargo be ready for collection?</small>
+                    </div>
+                
                 </div>
+                
+                <div class="form-row">
+                    <div class="form-field form-field-full">
+                
+                        <label for="targetDeliveryDate">Target Delivery Date (Optional)</label>
+                
+                        <input type="date" id="targetDeliveryDate">
+                
+                        <small>Enter your preferred arrival date, if known. Final delivery timing is subject to confirmation.</small>
+                
+                    </div>
+                </div>
+
             
                 <textarea id="message" rows="4" placeholder="Additional Notes or Specific Requirements"
                     aria-label="Additional Notes or Specific Requirements"></textarea>
