@@ -139,3 +139,25 @@ serviceTriggers.forEach(function (trigger) {
     });
 
 });
+
+// ================= SERVICE PAGE QUOTATION SELECTION =================
+
+(function () {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const requestedService = params.get("service");
+
+    const serviceField = document.getElementById("shippingMethod");
+
+    if (!requestedService || !serviceField) return;
+
+    const matchingOption = Array.from(serviceField.options).find(
+        option => option.value === requestedService
+    );
+
+    if (matchingOption) {
+        serviceField.value = requestedService;
+    }
+
+})();
